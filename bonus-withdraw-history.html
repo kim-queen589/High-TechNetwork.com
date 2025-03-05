@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Bonus Withdrawal History</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="sidebar">
+            <!-- ... Sidebar content ... -->
+        </div>
+
+        <div class="main-content">
+            <!-- Header (Same as other pages) -->
+            <div class="header">
+                <!-- ... Header content ... -->
+            </div>
+
+            <!-- Bonus Withdrawal History Content -->
+            <div class="transactions-container">
+                <h1>Bonus Withdrawal History</h1>
+                <p class="subtitle">View your bonus withdrawal transaction history</p>
+
+                <!-- Bonus Withdrawal Summary Cards -->
+                <div class="transaction-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-gift expense"></i>
+                        <div class="summary-info">
+                            <h3>Total Bonus Withdrawals</h3>
+                            <h2>Rs <span id="totalBonusWithdrawals">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="summary-info">
+                            <h3>Successful Withdrawals</h3>
+                            <h2><span id="successfulBonusWithdrawals">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="summary-info">
+                            <h3>Pending Withdrawals</h3>
+                            <h2><span id="pendingBonusWithdrawals">0</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bonus Withdrawal Filters -->
+                <div class="transaction-filters">
+                    <div class="filter-group">
+                        <label>Bonus Type:</label>
+                        <select id="bonusTypeFilter">
+                            <option value="all">All Types</option>
+                            <option value="training">Training Bonus</option>
+                            <option value="referral">Referral Bonus</option>
+                            <option value="investment">Investment Bonus</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Payment Method:</label>
+                        <select id="methodFilter">
+                            <option value="all">All Methods</option>
+                            <option value="easypaisa">EasyPaisa</option>
+                            <option value="jazzcash">JazzCash</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <input type="date" id="startDate">
+                        <span>to</span>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                </div>
+
+                <!-- Bonus Withdrawal List -->
+                <div class="transaction-list">
+                    <div class="transaction-header">
+                        <div class="header-item">Date</div>
+                        <div class="header-item">Bonus Type</div>
+                        <div class="header-item">Method</div>
+                        <div class="header-item">Amount</div>
+                        <div class="header-item">Status</div>
+                        <div class="header-item">Actions</div>
+                    </div>
+                    <div id="bonusWithdrawalItems">
+                        <!-- Bonus withdrawal items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">Page 1 of 1</span>
+                    <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Bonus Withdrawal Details Modal -->
+                <div class="modal" id="bonusWithdrawalModal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Bonus Withdrawal Details</h2>
+                        <div class="bonus-withdrawal-details">
+                            <!-- Details will be dynamically inserted here -->
+                        </div>
+                        <div class="modal-actions">
+                            <button class="close-btn">Close</button>
+                            <button class="download-btn">Download Receipt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="bonus-withdraw-history.js"></script>
+</body>
+</html> 
