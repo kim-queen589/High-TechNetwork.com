@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>High-Tech Network</h2>
+                <span class="back-arrow">←</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </div>
+
+                <div class="menu-section">
+                    <h3>PAYMENTS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Invest Now</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Training Bonus</span>
+                    </div>
+                    <div class="menu-item">
+                            <i class="fas fa-wallet"></i>
+                        <span>Withdraw</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Money Transfer</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>TRANSACTIONS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-list"></i>
+                        <span>All Transactions</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-download"></i>
+                        <span>Deposit History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-upload"></i>
+                        <span>Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-history"></i>
+                        <span>Bonus Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-award"></i>
+                        <span>Training Bonus History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Investment History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <div class="user-info">
+                    <img src="profile-placeholder.png" alt="Profile" class="profile-img">
+                    <div class="user-details">
+                        <span class="user-name">Eman Fatima</span>
+                        <span class="user-role">Diamond Member</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="logout-btn">Logout</button>
+                    <a href="home.html" class="home-btn">Home Page</a>
+                </div>
+            </div>
+
+            <div class="balance-cards">
+                <div class="card">
+                    <h3>Available Balance</h3>
+                    <h2>Rs <span id="availableBalance">0</span></h2>
+                </div>
+                <div class="card">
+                    <h3>Withdrawable Balance</h3>
+                    <h2>Rs <span id="withdrawableBalance">0</span></h2>
+                </div>
+                <div class="card">
+                    <h3>Training Bonus</h3>
+                    <h2>Rs <span id="trainingBonus">0</span></h2>
+                </div>
+                <div class="card">
+                    <h3>Total Invested</h3>
+                    <h2>Rs <span id="totalInvested">0</span></h2>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="profile-card">
+                    <img src="profile-placeholder.png" alt="Profile" class="large-profile-img">
+                    <h2 id="userName">User Name</h2>
+                    <p>Diamond Member</p>
+                    <button class="edit-profile">Edit Profile</button>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Points</h3>
+                    <h2 id="points">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Direct Referrals</h3>
+                    <h2 id="directReferrals">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Indirect Referrals</h3>
+                    <h2 id="indirectReferrals">0</h2>
+                </div>
+            </div>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>My Rank</h3>
+                    <p>Diamond Member</p>
+                </div>
+                <div class="info-card">
+                    <h3>Member Since</h3>
+                    <p>0 Months</p>
+                </div>
+                <div class="info-card">
+                    <h3>Total Earned</h3>
+                    <p>Rs: 0</p>
+                </div>
+                <div class="info-card">
+                    <h3>Sponsored By</h3>
+                    <p>None</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
