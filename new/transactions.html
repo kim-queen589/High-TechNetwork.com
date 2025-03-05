@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - All Transactions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="sidebar">
+            <!-- ... Sidebar content ... -->
+        </div>
+
+        <div class="main-content">
+            <!-- Header (Same as other pages) -->
+            <div class="header">
+                <!-- ... Header content ... -->
+            </div>
+
+            <!-- Transactions Content -->
+            <div class="transactions-container">
+                <h1>All Transactions</h1>
+                <p class="subtitle">View all your transaction history</p>
+
+                <!-- Transaction Summary Cards -->
+                <div class="transaction-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-arrow-down income"></i>
+                        <div class="summary-info">
+                            <h3>Total Income</h3>
+                            <h2>Rs <span id="totalIncome">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-arrow-up expense"></i>
+                        <div class="summary-info">
+                            <h3>Total Expense</h3>
+                            <h2>Rs <span id="totalExpense">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <div class="summary-info">
+                            <h3>Total Transactions</h3>
+                            <h2><span id="totalTransactions">0</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transaction Filters -->
+                <div class="transaction-filters">
+                    <div class="filter-group">
+                        <label>Type:</label>
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                            <option value="deposit">Deposits</option>
+                            <option value="withdrawal">Withdrawals</option>
+                            <option value="transfer">Transfers</option>
+                            <option value="investment">Investments</option>
+                            <option value="bonus">Bonuses</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <input type="date" id="startDate">
+                        <span>to</span>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                </div>
+
+                <!-- Transaction List -->
+                <div class="transaction-list">
+                    <div class="transaction-header">
+                        <div class="header-item">Date</div>
+                        <div class="header-item">Type</div>
+                        <div class="header-item">Description</div>
+                        <div class="header-item">Amount</div>
+                        <div class="header-item">Status</div>
+                        <div class="header-item">Actions</div>
+                    </div>
+                    <div id="transactionItems">
+                        <!-- Transaction items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">Page 1 of 1</span>
+                    <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Transaction Details Modal -->
+                <div class="modal" id="transactionModal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Transaction Details</h2>
+                        <div class="transaction-details">
+                            <!-- Details will be dynamically inserted here -->
+                        </div>
+                        <div class="modal-actions">
+                            <button class="close-btn">Close</button>
+                            <button class="download-btn">Download Receipt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="transactions.js"></script>
+</body>
+</html> 

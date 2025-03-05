@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Investment History</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="sidebar">
+            <!-- ... Sidebar content ... -->
+        </div>
+
+        <div class="main-content">
+            <!-- Header (Same as other pages) -->
+            <div class="header">
+                <!-- ... Header content ... -->
+            </div>
+
+            <!-- Investment History Content -->
+            <div class="transactions-container">
+                <h1>Investment History</h1>
+                <p class="subtitle">View your investment portfolio and earnings</p>
+
+                <!-- Investment Summary Cards -->
+                <div class="transaction-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-money-bill-trend-up income"></i>
+                        <div class="summary-info">
+                            <h3>Total Invested</h3>
+                            <h2>Rs <span id="totalInvested">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="summary-info">
+                            <h3>Total Earnings</h3>
+                            <h2>Rs <span id="totalEarnings">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-coins"></i>
+                        <div class="summary-info">
+                            <h3>Active Investments</h3>
+                            <h2><span id="activeInvestments">0</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Filters -->
+                <div class="transaction-filters">
+                    <div class="filter-group">
+                        <label>Investment Plan:</label>
+                        <select id="planFilter">
+                            <option value="all">All Plans</option>
+                            <option value="starter">Starter Plan</option>
+                            <option value="premium">Premium Plan</option>
+                            <option value="elite">Elite Plan</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <input type="date" id="startDate">
+                        <span>to</span>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                </div>
+
+                <!-- Investment List -->
+                <div class="transaction-list">
+                    <div class="transaction-header">
+                        <div class="header-item">Date</div>
+                        <div class="header-item">Plan</div>
+                        <div class="header-item">Amount</div>
+                        <div class="header-item">Earnings</div>
+                        <div class="header-item">Status</div>
+                        <div class="header-item">Actions</div>
+                    </div>
+                    <div id="investmentItems">
+                        <!-- Investment items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">Page 1 of 1</span>
+                    <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Investment Details Modal -->
+                <div class="modal" id="investmentModal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Investment Details</h2>
+                        <div class="investment-details">
+                            <!-- Details will be dynamically inserted here -->
+                        </div>
+                        <div class="modal-actions">
+                            <button class="close-btn">Close</button>
+                            <button class="download-btn">Download Statement</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="investment-history.js"></script>
+</body>
+</html> 

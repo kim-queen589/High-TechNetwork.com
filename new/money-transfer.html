@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Money Transfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="money-transfer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>High-Tech Network</h2>
+                <span class="back-arrow">←</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </div>
+
+                <div class="menu-section">
+                    <h3>PAYMENTS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Invest Now</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Training Bonus</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icons">
+                            <i class="fas fa-mobile-alt" title="EasyPaisa"></i>
+                            <i class="fas fa-phone" title="JazzCash"></i>
+                        </div>
+                        <span>Withdraw</span>
+                    </div>
+                    <div class="menu-item active">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Money Transfer</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>TRANSACTIONS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-list"></i>
+                        <span>All Transactions</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-download"></i>
+                        <span>Deposit History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-upload"></i>
+                        <span>Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-history"></i>
+                        <span>Bonus Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-award"></i>
+                        <span>Training Bonus History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Investment History</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="user-info">
+                    <img src="profile-placeholder.png" alt="Profile" class="profile-img">
+                    <div class="user-details">
+                        <span class="user-name">User Name</span>
+                        <span class="user-role">Diamond Member</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+            <!-- Money Transfer Content -->
+            <div class="transfer-container">
+                <h1>Money Transfer</h1>
+                <p class="subtitle">Transfer money to other users securely</p>
+
+                <div class="balance-overview">
+                    <div class="balance-card">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Available Balance</h3>
+                        <h2>Rs <span id="availableBalance">0</span></h2>
+                    </div>
+                    <div class="balance-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Total Transfers</h3>
+                        <h2><span id="totalTransfers">0</span></h2>
+                    </div>
+                </div>
+
+                <div class="transfer-form-container">
+                    <form id="transferForm">
+                        <div class="form-group">
+                            <input type="text" id="recipientUsername" required>
+                            <label for="recipientUsername">Recipient Username</label>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div class="payment-method" data-method="easypaisa">
+                                <img src="easypaisa-logo.png" alt="EasyPaisa" onerror="this.src='https://upload.wikimedia.org/wikipedia/en/e/e8/Easypaisa_logo.png'">
+                                <span>EasyPaisa</span>
+                            </div>
+                            <div class="payment-method" data-method="jazzcash">
+                                <img src="jazzcash-logo.png" alt="JazzCash" onerror="this.src='https://upload.wikimedia.org/wikipedia/en/b/b4/JazzCash_logo.png'">
+                                <span>JazzCash</span>
+                            </div>
+                            <div class="payment-method" data-method="bank">
+                                <i class="fas fa-university"></i>
+                                <span>Bank Transfer</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" id="amount" required min="100" step="100">
+                            <label for="amount">Amount (Min: Rs 100)</label>
+                        </div>
+
+                        <!-- Dynamic fields based on payment method -->
+                        <div id="paymentFields">
+                            <!-- Fields will be dynamically inserted here -->
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="description" rows="3" placeholder=" "></textarea>
+                            <label for="description">Description (Optional)</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="pin" required maxlength="4" pattern="\d{4}">
+                            <label for="pin">Security PIN</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Money</button>
+                    </form>
+                </div>
+
+                <!-- Recent Transfers -->
+                <div class="recent-transfers">
+                    <h2>Recent Transfers</h2>
+                    <div class="transfers-list">
+                        <!-- Transfers will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Recipient Details Modal -->
+                <div class="modal" id="recipientModal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Confirm Transfer</h2>
+                        <div class="recipient-details">
+                            <img src="profile-placeholder.png" alt="Recipient" class="recipient-img">
+                            <div class="recipient-info">
+                                <h3 id="recipientName"></h3>
+                                <p id="recipientId"></p>
+                            </div>
+                        </div>
+                        <div class="transfer-details">
+                            <div class="detail-item">
+                                <span>Amount:</span>
+                                <strong>Rs <span id="confirmAmount">0</span></strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Method:</span>
+                                <strong id="confirmMethod"></strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Fee:</span>
+                                <strong>Rs <span id="transferFee">0</span></strong>
+                            </div>
+                            <div class="detail-item total">
+                                <span>Total:</span>
+                                <strong>Rs <span id="totalAmount">0</span></strong>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="cancel-btn">Cancel</button>
+                            <button class="confirm-btn">Confirm Transfer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="money-transfer.js"></script>
+</body>
+</html> 

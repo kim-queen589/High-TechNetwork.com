@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Training Bonus History</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="sidebar">
+            <!-- ... Sidebar content ... -->
+        </div>
+
+        <div class="main-content">
+            <!-- Header (Same as other pages) -->
+            <div class="header">
+                <!-- ... Header content ... -->
+            </div>
+
+            <!-- Training Bonus History Content -->
+            <div class="transactions-container">
+                <h1>Training Bonus History</h1>
+                <p class="subtitle">View your training bonus earnings and history</p>
+
+                <!-- Training Bonus Summary Cards -->
+                <div class="transaction-summary">
+                    <div class="summary-card">
+                        <i class="fas fa-graduation-cap income"></i>
+                        <div class="summary-info">
+                            <h3>Total Training Bonus</h3>
+                            <h2>Rs <span id="totalTrainingBonus">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-book"></i>
+                        <div class="summary-info">
+                            <h3>Completed Courses</h3>
+                            <h2><span id="completedCourses">0</span></h2>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-certificate"></i>
+                        <div class="summary-info">
+                            <h3>Available Bonus</h3>
+                            <h2>Rs <span id="availableBonus">0</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Bonus Filters -->
+                <div class="transaction-filters">
+                    <div class="filter-group">
+                        <label>Course Type:</label>
+                        <select id="courseTypeFilter">
+                            <option value="all">All Courses</option>
+                            <option value="basic">Basic Training</option>
+                            <option value="advanced">Advanced Training</option>
+                            <option value="expert">Expert Training</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <input type="date" id="startDate">
+                        <span>to</span>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="bonus_received">Bonus Received</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="filter-btn">Apply Filters</button>
+                </div>
+
+                <!-- Training Bonus List -->
+                <div class="transaction-list">
+                    <div class="transaction-header">
+                        <div class="header-item">Date</div>
+                        <div class="header-item">Course Name</div>
+                        <div class="header-item">Progress</div>
+                        <div class="header-item">Bonus Amount</div>
+                        <div class="header-item">Status</div>
+                        <div class="header-item">Actions</div>
+                    </div>
+                    <div id="trainingBonusItems">
+                        <!-- Training bonus items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">Page 1 of 1</span>
+                    <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Training Details Modal -->
+                <div class="modal" id="trainingModal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Training Course Details</h2>
+                        <div class="training-details">
+                            <!-- Details will be dynamically inserted here -->
+                        </div>
+                        <div class="modal-actions">
+                            <button class="close-btn">Close</button>
+                            <button class="download-btn">Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="training-bonus-history.js"></script>
+</body>
+</html> 

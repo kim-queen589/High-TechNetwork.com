@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Training Bonus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="training-bonus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>High-Tech Network</h2>
+                <span class="back-arrow">←</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </div>
+
+                <div class="menu-section">
+                    <h3>PAYMENTS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Invest Now</span>
+                    </div>
+                    <div class="menu-item active">
+                        <i class="fas fa-gift"></i>
+                        <span>Training Bonus</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-wallet"></i>
+                        <span>Withdraw</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Money Transfer</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>TRANSACTIONS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-list"></i>
+                        <span>All Transactions</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-download"></i>
+                        <span>Deposit History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-upload"></i>
+                        <span>Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-history"></i>
+                        <span>Bonus Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-award"></i>
+                        <span>Training Bonus History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Investment History</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="user-info">
+                    <img src="profile-placeholder.png" alt="Profile" class="profile-img">
+                    <div class="user-details">
+                        <span class="user-name">User Name</span>
+                        <span class="user-role">Diamond Member</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+            <!-- Training Bonus Content -->
+            <div class="training-bonus-container">
+                <h1>Training Bonus Program</h1>
+                <p class="subtitle">Complete training tasks to earn bonus rewards</p>
+
+                <div class="bonus-overview">
+                    <div class="overview-card">
+                        <i class="fas fa-gift"></i>
+                        <h3>Available Bonus</h3>
+                        <h2>Rs <span id="availableBonus">0</span></h2>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Total Earned</h3>
+                        <h2>Rs <span id="totalEarned">0</span></h2>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Tasks Completed</h3>
+                        <h2><span id="tasksCompleted">0</span>/10</h2>
+                    </div>
+                </div>
+
+                <div class="training-tasks">
+                    <h2>Available Tasks</h2>
+                    
+                    <div class="task-list">
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="task-info">
+                                    <h3>Watch Training Video</h3>
+                                    <p>Learn about investment strategies</p>
+                                </div>
+                                <div class="task-reward">
+                                    <span>Rs 500</span>
+                                </div>
+                            </div>
+                            <div class="task-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <span>0/10 minutes</span>
+                            </div>
+                            <button class="start-task-btn">Start Task</button>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="task-info">
+                                    <h3>Complete Quiz</h3>
+                                    <p>Test your knowledge</p>
+                                </div>
+                                <div class="task-reward">
+                                    <span>Rs 1,000</span>
+                                </div>
+                            </div>
+                            <div class="task-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <span>0/10 questions</span>
+                            </div>
+                            <button class="start-task-btn">Start Task</button>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="task-info">
+                                    <h3>Refer Friends</h3>
+                                    <p>Invite new members</p>
+                                </div>
+                                <div class="task-reward">
+                                    <span>Rs 2,000</span>
+                                </div>
+                            </div>
+                            <div class="task-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <span>0/5 referrals</span>
+                            </div>
+                            <button class="start-task-btn">Start Task</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task Modal (hidden by default) -->
+                <div class="task-modal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Task Details</h2>
+                        <div class="task-details">
+                            <!-- Content will be dynamically inserted here -->
+                        </div>
+                        <div class="modal-actions">
+                            <button class="cancel-btn">Close</button>
+                            <button class="complete-btn">Complete Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="training-bonus.js"></script>
+</body>
+</html> 

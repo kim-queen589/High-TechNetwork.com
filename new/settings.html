@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Tech Network - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>High-Tech Network</h2>
+                <span class="back-arrow">←</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>PAYMENTS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Invest Now</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Training Bonus</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-wallet"></i>
+                        <span>Withdraw</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Money Transfer</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h3>TRANSACTIONS</h3>
+                    <div class="menu-item">
+                        <i class="fas fa-list"></i>
+                        <span>All Transactions</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-download"></i>
+                        <span>Deposit History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-upload"></i>
+                        <span>Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-history"></i>
+                        <span>Bonus Withdraw History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-award"></i>
+                        <span>Training Bonus History</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Investment History</span>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-item active">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <!-- Header (Same as other pages) -->
+            <div class="header">
+                <!-- ... Header content ... -->
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-container">
+                <h1>Account Settings</h1>
+                <p class="subtitle">Manage your account preferences and security</p>
+
+                <!-- Settings Sections -->
+                <div class="settings-sections">
+                    <!-- Profile Settings -->
+                    <div class="settings-section">
+                        <h2><i class="fas fa-user"></i> Profile Settings</h2>
+                        <div class="settings-form">
+                            <div class="profile-picture-section">
+                                <img src="profile-placeholder.png" alt="Profile" id="profilePicture" class="profile-picture">
+                                <button class="change-picture-btn">Change Picture</button>
+                                <input type="file" id="pictureInput" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="firstName" required>
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" required>
+                                <label for="lastName">Last Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <button class="save-btn">Save Profile Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="settings-section">
+                        <h2><i class="fas fa-shield-alt"></i> Security Settings</h2>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <input type="password" id="currentPassword" required>
+                                <label for="currentPassword">Current Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="newPassword" required>
+                                <label for="newPassword">New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="confirmPassword" required>
+                                <label for="confirmPassword">Confirm New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="pin" required maxlength="4" pattern="\d{4}">
+                                <label for="pin">New Security PIN</label>
+                            </div>
+                            <button class="save-btn">Update Security Settings</button>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section">
+                        <h2><i class="fas fa-bell"></i> Notification Settings</h2>
+                        <div class="settings-form">
+                            <div class="notification-option">
+                                <label class="toggle">
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-text">
+                                    <h3>Email Notifications</h3>
+                                    <p>Receive updates about transactions and account activity</p>
+                                </div>
+                            </div>
+                            <div class="notification-option">
+                                <label class="toggle">
+                                    <input type="checkbox" id="smsNotifications" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-text">
+                                    <h3>SMS Notifications</h3>
+                                    <p>Get SMS alerts for important account activities</p>
+                                </div>
+                            </div>
+                            <div class="notification-option">
+                                <label class="toggle">
+                                    <input type="checkbox" id="marketingNotifications">
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-text">
+                                    <h3>Marketing Communications</h3>
+                                    <p>Receive updates about new features and promotions</p>
+                                </div>
+                            </div>
+                            <button class="save-btn">Save Notification Preferences</button>
+                        </div>
+                    </div>
+
+                    <!-- Account Preferences -->
+                    <div class="settings-section">
+                        <h2><i class="fas fa-cog"></i> Account Preferences</h2>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <select id="language">
+                                    <option value="en">English</option>
+                                    <option value="ur">Urdu</option>
+                                </select>
+                                <label for="language">Language</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="currency">
+                                    <option value="PKR">Pakistani Rupee (PKR)</option>
+                                    <option value="USD">US Dollar (USD)</option>
+                                </select>
+                                <label for="currency">Currency</label>
+                            </div>
+                            <button class="save-btn">Save Preferences</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html> 
